@@ -15,9 +15,13 @@
 //= require bootstrap
 //= require_tree .
 $(function() {
-    $("#price, #qty").keyup(function() {
-        var p = $("#price").val();
-        var q = $("#qty").val();
-        $("#amount").val(q * p);
+    $("#tax_C1, #tax_C2, #tax_C3, #tax_C4, #tax_C5, #tax_C6").keyup(function() {
+        var a = $("#tax_C1").val();
+        var b = $("#tax_C2").val();
+        var c = $("#tax_C3").val();
+        var d = $("#tax_C4").val();
+        var e = $("#tax_C5").val();
+        var f = $("#tax_C6").val();
+        $("#tax_C7").val(a + b);
     });
 });
