@@ -1,0 +1,118 @@
+<%= simple_form_for(@tax, :html => { :class => 'form-horizontal' }) do |f| %>
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Residents Not Doing Business</a>
+    </div>
+  </div>
+
+  <div class="inputs">
+    <%= f.input :full_name, :placeholder => 'as per Identification Card / passport', :input_html => { :class => "span5" } %>
+    <%= f.input :reference, :label => 'Tax Reference #' %>
+    <%= f.input :ic_new %>
+    <%= f.input :ic_old %>
+  </div>
+
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Section A: Individual Information</a>
+    </div>
+  </div>
+
+  <div class="inputs">
+    <%= f.input :sex, :collection => [ "Male", "Female" ], :as => :radio_buttons %>
+    <%= f.input :marital_status, :collection => [ "Single", "Married", "Divorced", "Deceased" ], :as => :radio_buttons %>
+    <%= f.input :marital_date %>
+    <%= f.input :type_of_assessment, :collection => [ "togather in the name of husband", "togather in the name of wife", "separate", "Self. Husband or wife has no source of income"  ], :as => :radio_buttons %>
+    <%= f.input :general_resolutions_complied %>
+    <%= f.input :address1, :input_html => { :class => "span5" } %>
+    <%= f.input :address2, :input_html => { :class => "span5" } %>
+    <%= f.input :postcode, :input_html => { :class => "span1" } %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+    <%= f.input :phone %>
+    <%= f.input :employer_reference_number %>
+    <%= f.input :email, :input_html => { :class => "span3" } %>
+    <%= f.input :bank_name %>
+    <%= f.input :bank_account_number %>
+  </div>
+
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Section B: Particulars of Spouse</a>
+    </div>
+  </div>
+
+  <div class="inputs">
+    <%= f.input :spouse_full_name, :placeholder => 'as per Identification Card / passport', :input_html => { :class => "span5" } %>
+    <%= f.input :spouse_reference_number %>
+    <%= f.input :spouse_ic_new %>
+    <%= f.input :spouse_ic_old %>
+  </div>
+
+   <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Section C: Statutory Income and Total Income</a>
+    </div>
+  </div>
+
+  <div class="inputs">
+    <div id="price">
+    <%= f.input :C1, :label => '', :hint => 'Salary' %>
+    </div>
+    <div id="qty">
+    <%= f.input :C2, :label => '', :hint => 'Dividend' %>
+    </div>
+    <%= f.input :C3, :label => '', :hint => 'Benefits and discounts' %>
+    <%= f.input :C4, :label => '', :hint => 'Rents, royalties, and premiums' %>
+    <%= f.input :C5, :label => '', :hint => 'Pensions, annuities, and other periodic payments' %>
+    <%= f.input :C6, :label => '', :hint => 'Other gains or profits' %>
+    <div id="amount">
+    <%= f.input :C7, :label => '', :hint => 'AGREGATE INCOME: C1 to C6, minus donations and gifts' %>
+    </div>
+    <%= f.input :C8, :label => '', :hint => 'Prize money to the state or local government' %>
+    <%= f.input :C8A, :label => '', :hint => 'Prize money to an institution or organization approved' %>
+    <%= f.input :C9, :label => '', :hint => 'Prize money or contribution in kind to the recreational sports body approved' %>
+    <%= f.input :C10, :label => '', :hint => 'Gift of money or cost of contribution in kind for any project approved by the minister of finance' %>
+    <%= f.input :C11, :label => '', :hint => 'Gift of artefacts, manuscripts, or painting' %>
+    <%= f.input :C12, :label => '', :hint => 'Prize money for the library or the library facilities' %>
+    <%= f.input :C13, :label => '', :hint => 'Gift of money or contribution in kind to provide public facilities for people with disabilities' %>
+    <%= f.input :C14, :label => '', :hint => 'Prize money or medical equipment to any healthcare facility' %>
+    <%= f.input :C15, :label => '', :hint => 'Gift art gallery paintings to the country or state art' %>
+    <%= f.input :C16, :label => '', :hint => 'TOTAL INCOME (Own): C7 minus (C8 to C15). Fill 0 if negative' %>
+    <%= f.input :C17, :label => '', :hint => 'Total income transferred from spouse for joint assessment' %>
+    <%= f.input :C18, :label => '', :hint => 'The consolidated total income (C16 plus C17)' %>
+  </div>
+
+  <div class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Section D: Exemption</a>
+    </div>
+  </div>
+
+  <div class="inputs">
+    <%= f.input :D1, :label => '', :hint => 'Individual and dependent relatives' %>
+    <%= f.input :D2, :label => '', :hint => 'Medical spending for parents of illness certified by a medical practitioner' %>
+    <%= f.input :D3, :label => '', :hint => 'Basic supporting equipment for own use, husband, wife, children, or parents with disabilities' %>
+    <%= f.input :D4, :label => '', :hint => 'Individuals with disabilities' %>
+    <%= f.input :D5, :label => '', :hint => 'Own education fees' %>
+    <%= f.input :D6, :label => '', :hint => 'Medical expenses on serious diseases treated for yourself, your spouse, or child' %>
+    <%= f.input :D7, :label => '', :hint => 'Complete medical examination for self, spouse, or child (limited to RM 500)' %>
+    <%= f.input :D8, :label => '', :hint => 'Purchase of books, magazines, journals, (except newspapers) for yourself, your spouse, or child' %>
+    <%= f.input :D8A, :label => '', :hint => 'Purchase of personal computer for individual (deduction allowed once every 3 years)' %>
+    <%= f.input :D8B, :label => '', :hint => 'Net savings in national education savings scheme (total savings in the year 2013 minus the total withdrawal in the year 2013)' %>
+    <%= f.input :D8C, :label => '', :hint => 'Purchase of sports equipment for sports activities under the Sports Development Act 1997' %>
+    <%= f.input :D8D, :label => '', :hint => 'Housing loan interest (must meet eligibility requirements)' %>
+    <%= f.input :D9, :label => '', :hint => 'Husband or wife alimony payments to ex-wife' %>
+    <%= f.input :D10, :label => '', :hint => 'Disabled husband or wife' %>
+
+    <%= f.input :D12, :label => '', :hint => 'Life insurance and KWSP' %>
+    <%= f.input :D13, :label => '', :hint => 'Education and medical insurance' %>
+    <%= f.input :D14, :label => '', :hint => 'TOTAL EXEMPTIONS (D1 to D13)' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+               root_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  full_name: MyString
+  reference: MyString
+  ic_new: MyString
+  ic_old: MyString
+  police: MyString
+  military: MyString
+  passport_current: MyString
+  passport_registered: MyString
+
+two:
+  full_name: MyString
+  reference: MyString
+  ic_new: MyString
+  ic_old: MyString
+  police: MyString
+  military: MyString
+  passport_current: MyString
+  passport_registered: MyString
